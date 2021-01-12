@@ -6,14 +6,22 @@ public class Empleado extends Persona {
     private double sueldo;
     private static int contadorRmpledo;
 
-    public Empleado(String nombre,int edad, double sueldo) {
-        super(nombre,edad);
-        
+    public Empleado() {
         this.idEmpleado = ++Empleado.contadorRmpledo;
+    }
+
+    public Empleado(String nombre, int edad, double sueldo) {
+        // usamos el concepto de sobrecarga de contructode  con la palabra this()
+        //los parametros de lis depente de constructo que se esta 
+        //llamado ,en este apartado se  utiliza this o super pero no ambos
+//        super(nombre);
+        this();
+        this.nombre = nombre;
+
         this.sueldo = sueldo;
     }
 
-    public int getIdEmpleado() { 
+    public int getIdEmpleado() {
         return this.idEmpleado;
     }
 
